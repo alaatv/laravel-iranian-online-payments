@@ -13,6 +13,10 @@
   "require": {
     "php": "^7.1.3"
   },
+  "suggest": {
+        "alaatv/mellat": "mellat driver for payments.",
+        "alaatv/zarinpal": "zarinpal driver for payments."
+  },
   "autoload": {
     "psr-4": {
       "AlaaTV\\Gateways\\": "src"
