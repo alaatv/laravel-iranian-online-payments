@@ -1,6 +1,6 @@
 <?php
 
-namespace App\PaymentModule;
+namespace AlaaTV\Gateways;
 
 use AlaaTV\Gateways\Contracts\OnlineGateway;
 
