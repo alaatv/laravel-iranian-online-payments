@@ -14,6 +14,7 @@ class PaymentDriver
     {
         app()->bind(OnlineGateway::class, self::$map[$driver]);
         config()->set('constants.PAYMENT_METHOD_ONLINE', self::$gates[$driver]);
+        return resolve(OnlineGateway::class);
     }
 
     public static function addDriver($key, $value, $id)

@@ -11,13 +11,13 @@ class HtmlFormGenerator
         $milli = (string) ($seconds * 1000);
 
         $redirectData = OnlineGateWay::generatePaymentPageUriObject($authorityCode);
-        $T = "<form id='__alaa_gateway_form__' method='{$redirectData->getMethod()}' action='{$redirectData->getRedirectUrl()}'>";
+        $output = "<form id='__alaa_gateway_form__' method='{$redirectData->getMethod()}' action='{$redirectData->getRedirectUrl()}'>";
 
         foreach ($redirectData->getInput() as $input) {
-            $T .= "<input type='hidden' name='".$input['name']."' value='".$input['value']."'>";
+            $output .= "<input type='hidden' name='".$input['name']."' value='".$input['value']."'>";
         }
 
-        $T .= "</form><script type='text/javascript'>
+        $output .= "</form><script type='text/javascript'>
             function ready(callback) {
                 // in case the document is already rendered
                 if (document.readyState != 'loading') callback();
@@ -36,6 +36,6 @@ class HtmlFormGenerator
             });
         </script>";
 
-        return $T;
+        return $output;
     }
 }
