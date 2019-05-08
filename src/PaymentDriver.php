@@ -12,7 +12,13 @@ class PaymentDriver
 
     public static function select($driver)
     {
-        app()->bind(OnlineGateway::class, self::$map[$driver]);
+        $driverClass = self::$map[$driver] ?? null;
+
+        if(is_null($driverClass)) {
+            throw new \InvalidArgumentException("$driver driver not found");
+        }
+
+        app()->bind(OnlineGateway::class, $driverClass);
         config()->set('constants.PAYMENT_METHOD_ONLINE', self::$gates[$driver]);
         return resolve(OnlineGateway::class);
     }
