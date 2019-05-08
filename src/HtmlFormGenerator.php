@@ -2,7 +2,7 @@
 
 namespace AlaaTV\Gateways;
 
-use AlaaTV\Gateways\Facades\OnlineGateWay;
+use AlaaTV\Gateways\Contracts\OnlineGateway;
 
 class HtmlFormGenerator
 {
@@ -10,7 +10,7 @@ class HtmlFormGenerator
     {
         $milli = (string) ($seconds * 1000);
 
-        $redirectData = OnlineGateWay::generatePaymentPageUriObject($authorityCode);
+        $redirectData = resolve(OnlineGateway::class)->generatePaymentPageUriObject($authorityCode);
         $output = "<form id='__alaa_gateway_form__' method='{$redirectData->getMethod()}' action='{$redirectData->getRedirectUrl()}'>";
 
         foreach ($redirectData->getInput() as $input) {
