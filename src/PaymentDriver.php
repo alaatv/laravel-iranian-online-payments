@@ -16,7 +16,7 @@ class PaymentDriver
         config()->set('constants.PAYMENT_METHOD_ONLINE', self::$gates[$driver]);
     }
 
-    public function addDriver($key, $value, $id)
+    public static function addDriver($key, $value, $id)
     {
         self::$map[$key] = $value;
         self::$gates[$key] = $id;
