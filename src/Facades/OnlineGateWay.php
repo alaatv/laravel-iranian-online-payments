@@ -11,7 +11,7 @@ use AlaaTV\Gateways\Contracts\OnlineGateway as OnlineGatewayContract;
  * @method static getAuthorityValue();
  * @method static verifyPayment($amount, $authority);
  * @method static generateAuthorityCode(string $callbackUrl, int $cost, string $description, $orderId);
- * @method static OnlinePaymentRedirectionUriInterface generatePaymentPageUriObject($refId)
+ * @method static \AlaaTV\Gateways\RedirectData generatePaymentPageUriObject($refId)
  */
 class OnlineGateWay extends Facade
 {

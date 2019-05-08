@@ -2,9 +2,7 @@
 
 namespace AlaaTV\Gateways;
 
-use AlaaTV\Gateways\Contracts\OnlinePaymentRedirectionUriInterface;
-
-class RedirectData implements OnlinePaymentRedirectionUriInterface
+class RedirectData
 {
     private $redirectUrl;
 

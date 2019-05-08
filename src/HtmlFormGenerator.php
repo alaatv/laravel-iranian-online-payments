@@ -2,6 +2,8 @@
 
 namespace AlaaTV\Gateways;
 
+use AlaaTV\Gateways\Facades\OnlineGateWay;
+
 class HtmlFormGenerator
 {
     public static function generate($authorityCode, $seconds= 4)
