@@ -8,8 +8,6 @@ class PaymentDriver
 {
     private static $map = [];
 
-    private static $gates = [];
-
     public static function select($driver)
     {
         $driverClass = self::$map[$driver] ?? null;
@@ -19,13 +17,12 @@ class PaymentDriver
         }
 
         app()->bind(OnlineGateway::class, $driverClass);
-        config()->set('constants.PAYMENT_METHOD_ONLINE', self::$gates[$driver]);
+
         return resolve(OnlineGateway::class);
     }
 
-    public static function addDriver($key, $value, $id)
+    public static function addDriver($key, $value)
     {
         self::$map[$key] = $value;
-        self::$gates[$key] = $id;
     }
 }
