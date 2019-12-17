@@ -10,7 +10,7 @@ interface OnlineGateway
 
     public function getAuthorityValue(): string;
     
-    public function generatePaymentPageUriObject($refId): RedirectData;
+    public function generatePaymentPageUriObject($refId , $mobile): RedirectData;
     
     public function verifyPayment(IranianCurrency $amount, $authority): OnlinePaymentVerificationResponseInterface;
 }
