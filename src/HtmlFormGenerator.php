@@ -6,7 +6,7 @@ use AlaaTV\Gateways\Contracts\OnlineGateway;
 
 class HtmlFormGenerator
 {
-    public static function generate($authorityCode, $seconds= 4)
+    public static function generate($authorityCode , $mobile , $seconds= 4)
     {
         $milli = (string) ($seconds * 1000);
 
