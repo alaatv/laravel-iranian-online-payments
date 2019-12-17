@@ -10,7 +10,7 @@ class HtmlFormGenerator
     {
         $milli = (string) ($seconds * 1000);
 
-        $redirectData = resolve(OnlineGateway::class)->generatePaymentPageUriObject($authorityCode);
+        $redirectData = resolve(OnlineGateway::class)->generatePaymentPageUriObject($authorityCode , $mobile);
         $output = "<form id='__alaa_gateway_form__' method='{$redirectData->getMethod()}' action='{$redirectData->getRedirectUrl()}'>";
 
         foreach ($redirectData->getInput() as $input) {
